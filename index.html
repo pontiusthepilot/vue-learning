@@ -6,6 +6,21 @@
     <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
 </head>
     <body>
-
+        <div id="#app"></div>   <!--  Vue only has access to HTML inside the app container -->
+            <p>
+                <input type="text" v-model="greeting">  <!-- v-model listens for changes to greeting and also binds the value of greeting.  -->
+            </p>
+            <p>
+                {{ greeting }} {{ greeting.length }}    <!-- Echo out the contents of greeting and the number of characters -->
+            </p>
+        <script>
+            Vue.createApp({
+                data() {
+                    return {
+                        greeting: 'Hello World'
+                    }
+                }
+            }).mount('#app');
+        </script>
     </body>
 </html>
