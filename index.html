@@ -4,8 +4,29 @@
     <meta charset="UTF-8">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
     <body>
+        <div id="#app">
+            <button name="clickme" :class="clickmeActive ? 'text-red' : 'text-green'" @click="toggleColour">Click me</button>
+            <!-- the colon is shorthand for v-bind:-->
+            <!-- the @ symbol is shorthand for v-on:-->
+        </div>
+        <script>
+            // Options api
+            Vue.createApp({
+                data() {
+                    return {
+                        clickmeActive: false
+                    }
+                },
 
+                methods: {
+                    toggleColour() {
+                        this.clickmeActive = ! this.clickmeActive;  <!-- See line 11 -->
+                    }
+                }
+            }).mount('#app');
+        </script>
     </body>
 </html>
