@@ -3,4 +3,4 @@ export default {
     components: {
         'app-button': AppButton
     }
-}
+};
